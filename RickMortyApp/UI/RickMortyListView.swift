@@ -33,10 +33,11 @@ struct RickMortyListView: View {
     var body: some View {
         NavigationView {
 //            VStack{
-//                Toggle(isOn: $showFavorites) {
+//                Toggle(isOn: TRUE){//isOn: $showFavorites) {
 //                    Text("Mostrar Favoritos")
 //                }.padding()
-//
+//            }
+
                 //List (filteredCharacters, id: \.id) { character in
                 List (characters, id: \.name) { character in
                     NavigationLink (destination:ListDetailView()){
@@ -55,8 +56,8 @@ struct RickMortyListView: View {
                         }
                     }
                     
-                }
-            }.navigationTitle("Characters List")
+                }.navigationTitle("Characters List")
+            }
         }
     }
 

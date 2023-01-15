@@ -33,10 +33,10 @@ struct RickMortyCharacterView: View {
             .background(Color.gray.opacity(0.1))
             .clipShape(Circle())
                 
-                Text("#\(character.id?.description ?? "")")
+         /*       Text("#\(character.id?.description ?? "")")
                     .font(.title2)
                     .fontWeight(.light)
-                
+         */
                 Text(character.name.capitalized)
                     .font(.title)
                     .fontWeight(.medium)
