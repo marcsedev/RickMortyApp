@@ -9,14 +9,28 @@ import SwiftUI
 
 struct ListDetailView: View {
     
-    var character: Character
-    @Binding var favorite: Bool
+    //var character: Character
+    //@Binding var favorite: Bool
 
     
     var body: some View {
         
         VStack {
-            character.avatar
+                Image(systemName: "")
+                    .resizable().frame(width: 200, height: 200)
+                    .clipShape(Circle())
+                    .overlay(Circle()
+                        .stroke(Color.black, lineWidth: 4 ))
+                    .shadow(color: Color.gray, radius: 5)
+                Text("Name").font(.largeTitle)
+                Text("Languages").font(.title)
+            //Text(character.type).font(.title)
+            Spacer()
+            }
+        }
+    }
+
+            /*  character.avatar
                 .resizable().frame(width: 200, height: 200)
                 .clipShape(Circle())
                 .overlay(Circle()
@@ -24,7 +38,7 @@ struct ListDetailView: View {
                 .shadow(color: Color.gray, radius: 5)
             HStack{
                 Text(character.name).font(.largeTitle)
-                Button{
+              Button{
                     favorite.toggle()
                 } label: {
                     if favorite{
@@ -34,7 +48,7 @@ struct ListDetailView: View {
                         Image(systemName: "star.fill").foregroundColor(.black)
                     }
                    
-                    
+                   
                 }
             }
             Text(character.type).font(.title)
@@ -43,9 +57,9 @@ struct ListDetailView: View {
         
     }
 }
-
+*/
 struct ListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListDetailView(character: Character(id: 1, name: "Rick", type: "Human", avatar: Image(systemName: "person.fill"), favorite: true), favorite: .constant(false))
+        ListDetailView()//character: Character(id: 1, name: "Rick", type: "Human", avatar: Image(systemName: "person.fill"), favorite: true), favorite: .constant(false))
     }
 }

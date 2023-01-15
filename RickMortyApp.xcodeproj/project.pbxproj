@@ -19,6 +19,7 @@
 		CD12026D2973568700599972 /* RickMortyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12026C2973568700599972 /* RickMortyListView.swift */; };
 		CD12026F2973569E00599972 /* RickMortyCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12026E2973569E00599972 /* RickMortyCharacterView.swift */; };
 		CD120271297356B000599972 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD120270297356B000599972 /* ListDetailView.swift */; };
+		CD120274297413F100599972 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD120273297413F100599972 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD120274297413F100599972 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +186,9 @@
 			dependencies = (
 			);
 			name = RickMortyApp;
+			packageProductDependencies = (
+				CD120273297413F100599972 /* Alamofire */,
+			);
 			productName = RickMortyApp;
 			productReference = CD120235297354AA00599972 /* RickMortyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -256,6 +261,9 @@
 				Base,
 			);
 			mainGroup = CD12022C297354AA00599972;
+			packageReferences = (
+				CD120272297413F100599972 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = CD120236297354AA00599972 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -648,6 +656,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD120272297413F100599972 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD120273297413F100599972 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD120272297413F100599972 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD12022D297354AA00599972 /* Project object */;
 }
