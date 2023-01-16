@@ -9,14 +9,39 @@ import SwiftUI
 
 struct ListDetailView: View {
     
-    var character: Character
-    @Binding var favorite: Bool
+    var character: Results
+    //@Binding var favorite: Bool
 
     
     var body: some View {
         
         VStack {
-            character.avatar
+            AsyncImage(url: character.imageUrl) { image in
+            image.resizable().frame(width: 200, height: 200)
+                    .clipShape(Circle())
+                    .overlay(Circle()
+                        .stroke(Color.black, lineWidth: 4 ))
+                .shadow(color: Color.gray, radius: 5)
+            } placeholder: {
+                Image(systemName: "person.fill")
+                    .resizable().frame(width: 200, height: 200)
+                    .clipShape(Circle())
+                    .overlay(Circle()
+                        .stroke(Color.black, lineWidth: 4 ))
+                .shadow(color: Color.gray, radius: 5)
+                
+            }
+            Text(character.name).font(.largeTitle)
+                //Text("Name").font(.largeTitle)
+            Text(character.species).font(.title)
+            Text(character.status).font(.title2)
+            //Text(character.type).font(.title)
+            Spacer()
+            }
+        }
+    }
+
+            /*  character.avatar
                 .resizable().frame(width: 200, height: 200)
                 .clipShape(Circle())
                 .overlay(Circle()
@@ -24,7 +49,7 @@ struct ListDetailView: View {
                 .shadow(color: Color.gray, radius: 5)
             HStack{
                 Text(character.name).font(.largeTitle)
-                Button{
+              Button{
                     favorite.toggle()
                 } label: {
                     if favorite{
@@ -34,7 +59,7 @@ struct ListDetailView: View {
                         Image(systemName: "star.fill").foregroundColor(.black)
                     }
                    
-                    
+                   
                 }
             }
             Text(character.type).font(.title)
@@ -43,9 +68,9 @@ struct ListDetailView: View {
         
     }
 }
-
+*/
 struct ListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListDetailView(character: Character(id: 1, name: "Rick", type: "Human", avatar: Image(systemName: "person.fill"), favorite: true), favorite: .constant(false))
+        ListDetailView(character: Results.init(name: "Name", status: "Alive", species: "String", url: "url"))  //Results.init(results: []))//character: Character(id: 1, name: "Rick", type: "Human", avatar: Image(systemName: "person.fill"), favorite: true), favorite: .constant(false))
     }
 }
