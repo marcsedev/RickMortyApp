@@ -51,7 +51,7 @@ struct RickMortyCharacterView: View {
 
 struct RickMortyCharacterView_Previews: PreviewProvider {
     static var previews: some View {
-        RickMortyCharacterView(character: Results(name: "Rick", url: "url"))
+        RickMortyCharacterView(character: Results(name: "Rick", status: "Alive", species: "species", url: "url"))
                                                   //id: 1, name: "Rick", type: "Human", avatar: Image(systemName: "person.fill")))//, favorite: true))
     }
 }

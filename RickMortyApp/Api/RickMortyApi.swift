@@ -12,7 +12,7 @@ final class RickMortyApi{
     
     func loadCharacter (completion: @escaping (Result<[Results], Error>) -> ())  {
         
-        AF.request("https://rickandmortyapi.com/api/character").responseDecodable(of: Characters.self) { response in
+        AF.request("https://rickandmortyapi.com/api/character").responseDecodable(of: Character.self) { response in
             
             switch response.result {
             case .success(let charactersList):

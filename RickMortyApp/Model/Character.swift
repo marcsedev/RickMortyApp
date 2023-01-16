@@ -6,6 +6,25 @@
 //
 
 import Foundation
+
+struct Character : Hashable, Decodable {
+    let results: [Results]
+    
+}
+
+struct Results: Hashable, Decodable {
+    
+    var id: Int? {return Int(url.split(separator: "/").last?.description ?? "0")}
+    let name: String
+    let status: String
+    //var image: String
+    var imageUrl:  URL? { return URL(string: "https://rickandmortyapi.com/api/character/avatar/\(id ?? 0).jpeg")}
+    let species: String
+    var url: String
+}
+
+
+
 //import SwiftUI
 
 /*
@@ -28,11 +47,13 @@ struct Character {
      
  }
 */
- struct Characters : Decodable{
+ /*struct Characters : Decodable{
      //let info: Info
      let results: [Results]
+     
+     //var favorite: Bool
  }
-
+*/
  /*struct Info : Codable{
      let count:Int//": 826,
      let pages:Int//": 42,
@@ -40,7 +61,7 @@ struct Character {
      let prev:String?//": null
  }*/
 
- struct Results: Decodable {
+/* struct Results: Decodable {
 //     let id: Int
      var id: Int? {
          return Int(url.split(separator: "/").last?.description ?? "0")
@@ -61,6 +82,7 @@ struct Character {
 //     let episode: [String]
      let url: String
 //     let created: String
+
      
  }
 
@@ -90,4 +112,4 @@ struct Character: Decodable{
         return URL(string:"")
         
     }*/
-    
+    */

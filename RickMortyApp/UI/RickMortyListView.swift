@@ -22,7 +22,10 @@ struct RickMortyListView: View {
     
     //@EnvironmentObject var charactersModelData: CharactersModelData
         
-    @State private var characters: [Results] = []
+    @State var characters: [Results] = []
+    //let character: Results
+    //var character: Results
+    //var character: [Results] = []
     
 //    private var filteredCharacters: [Character]{
 //        return charactersModelData.characters.filter { character in
@@ -39,10 +42,9 @@ struct RickMortyListView: View {
 //            }
 
                 //List (filteredCharacters, id: \.id) { character in
-                List (characters, id: \.name) { character in
-                    NavigationLink (destination:ListDetailView()){
+            List (characters, id: \.name) { character in
+                NavigationLink (destination:ListDetailView(character: character)){ //Character.init(results: []))){
                         RickMortyCharacterView(character: character)//, //favorite: $charactersModelData.characters //[character.id].favorite)) {
-                        //RickMortyCharacterView(character: character)
                     }
                 }
                 .onAppear(){
