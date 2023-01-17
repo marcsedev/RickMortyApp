@@ -37,7 +37,6 @@ struct ListDetailView: View {
                 if (character.status == "Alive") {
                 Image(systemName: "circle.fill").foregroundColor(.green)
             }else if(character.status == "unknown") {
-                Text(character.status)
                 Image(systemName: "circle.fill").foregroundColor(.orange)
             }else{
                  Image(systemName: "circle.fill").foregroundColor(.red)

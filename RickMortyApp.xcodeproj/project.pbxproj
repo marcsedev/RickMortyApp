@@ -20,6 +20,7 @@
 		CD12026F2973569E00599972 /* RickMortyCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12026E2973569E00599972 /* RickMortyCharacterView.swift */; };
 		CD120271297356B000599972 /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD120270297356B000599972 /* ListDetailView.swift */; };
 		CD120274297413F100599972 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD120273297413F100599972 /* Alamofire */; };
+		CDD5111729769EA80054259C /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD5111629769EA80054259C /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		CD12026C2973568700599972 /* RickMortyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyListView.swift; sourceTree = "<group>"; };
 		CD12026E2973569E00599972 /* RickMortyCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyCharacterView.swift; sourceTree = "<group>"; };
 		CD120270297356B000599972 /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
+		CDD5111629769EA80054259C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				CD12026C2973568700599972 /* RickMortyListView.swift */,
 				CD12026E2973569E00599972 /* RickMortyCharacterView.swift */,
 				CD120270297356B000599972 /* ListDetailView.swift */,
+				CDD5111629769EA80054259C /* SplashScreenView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				CD1202692973564600599972 /* RickMortyApi.swift in Sources */,
 				CD12026B2973566D00599972 /* Character.swift in Sources */,
 				CD120271297356B000599972 /* ListDetailView.swift in Sources */,
+				CDD5111729769EA80054259C /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
