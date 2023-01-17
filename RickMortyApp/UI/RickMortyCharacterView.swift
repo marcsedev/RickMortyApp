@@ -13,6 +13,7 @@ struct RickMortyCharacterView: View {
     
     var body: some View {
         HStack{
+            
 //            character.avatar
 //                .resizable()
 //                .frame(width: 40,
@@ -24,7 +25,7 @@ struct RickMortyCharacterView: View {
             AsyncImage(url: character.imageUrl) { image in
                 image.resizable()
             } placeholder: {
-                Image(systemName: "number")
+                Image(systemName: "person.fill")
                     .resizable()
                     .padding()
             }
@@ -36,22 +37,34 @@ struct RickMortyCharacterView: View {
          /*       Text("#\(character.id?.description ?? "")")
                     .font(.title2)
                     .fontWeight(.light)
-         */
-                Text(character.name.capitalized)
-                    .font(.title)
-                    .fontWeight(.medium)
+          */VStack(alignment: .leading) {
+              Text(character.name.capitalized)
+                      .font(.headline)
+                      .fontWeight(.medium)
+              Text(character.species)
+                  .font(.subheadline)
+                  .fontWeight(.thin)
+          }
 
             Spacer()
-//            if character.favorite{
-//                Image(systemName: "star.fill").foregroundColor(.yellow)
-//            }
+            
+            if (character.status == "Alive") {
+                Text(character.status)
+                Image(systemName: "circle.fill").foregroundColor(.green)
+            }else if(character.status == "unknown") {
+                Text(character.status)
+                Image(systemName: "circle.fill").foregroundColor(.orange)
+            }else{
+                Text(character.status)
+                Image(systemName: "circle.fill").foregroundColor(.red)
+            }
         }
     }
 }
 
 struct RickMortyCharacterView_Previews: PreviewProvider {
     static var previews: some View {
-        RickMortyCharacterView(character: Results(name: "Rick", status: "Alive", species: "species", url: "url"))
+        RickMortyCharacterView(character: Results(name: "Rick", status: "Alive",  species: "species", url: "url"))//, favorite: true))
                                                   //id: 1, name: "Rick", type: "Human", avatar: Image(systemName: "person.fill")))//, favorite: true))
     }
 }

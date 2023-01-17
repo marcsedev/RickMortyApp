@@ -10,21 +10,19 @@ import SwiftUI
 struct ListDetailView: View {
     
     var character: Results
-    //@Binding var favorite: Bool
-
+    //var favorite: Results
     
     var body: some View {
         
         VStack {
             AsyncImage(url: character.imageUrl) { image in
-            image.resizable().frame(width: 200, height: 200)
+                image.resizable().frame(width: 300, height: 300)
                     .clipShape(Circle())
                     .overlay(Circle()
                         .stroke(Color.black, lineWidth: 4 ))
                 .shadow(color: Color.gray, radius: 5)
-            } placeholder: {
-                Image(systemName: "person.fill")
-                    .resizable().frame(width: 200, height: 200)
+            } placeholder: {Image(systemName: "person.fill")
+                    .resizable().frame(width: 300, height: 300)
                     .clipShape(Circle())
                     .overlay(Circle()
                         .stroke(Color.black, lineWidth: 4 ))
@@ -34,7 +32,16 @@ struct ListDetailView: View {
             Text(character.name).font(.largeTitle)
                 //Text("Name").font(.largeTitle)
             Text(character.species).font(.title)
-            Text(character.status).font(.title2)
+            HStack{
+                Text(character.status)
+                if (character.status == "Alive") {
+                Image(systemName: "circle.fill").foregroundColor(.green)
+            }else if(character.status == "unknown") {
+                Text(character.status)
+                Image(systemName: "circle.fill").foregroundColor(.orange)
+            }else{
+                 Image(systemName: "circle.fill").foregroundColor(.red)
+            }            }
             //Text(character.type).font(.title)
             Spacer()
             }
@@ -71,6 +78,7 @@ struct ListDetailView: View {
 */
 struct ListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListDetailView(character: Results.init(name: "Name", status: "Alive", species: "String", url: "url"))  //Results.init(results: []))//character: Character(id: 1, name: "Rick", type: "Human", avatar: Image(systemName: "person.fill"), favorite: true), favorite: .constant(false))
+        ListDetailView(
+            character: Results.init(name: "Name", status: "Alive", species: "String", url: "url"))//, favorite: true))//Results.init(results: []))//character: Character(id: 1, name: "Rick", type: "Human", avatar: Image(systemName: "person.fill"), favorite: true), favorite: .constant(false))
     }
 }

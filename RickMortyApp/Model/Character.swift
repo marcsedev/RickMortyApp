@@ -9,6 +9,7 @@ import Foundation
 
 struct Character : Hashable, Decodable {
     let results: [Results]
+    //var favorite: Bool
     
 }
 
@@ -17,13 +18,16 @@ struct Results: Hashable, Decodable {
     var id: Int? {return Int(url.split(separator: "/").last?.description ?? "0")}
     let name: String
     let status: String
-    //var image: String
-    var imageUrl:  URL? { return URL(string: "https://rickandmortyapi.com/api/character/avatar/\(id ?? 0).jpeg")}
     let species: String
-    var url: String
+    //let type: String
+    //let gender: String
+    //let origin, location: Location
+    //let image: String
+    var imageUrl:  URL? { return URL(string: "https://rickandmortyapi.com/api/character/avatar/\(id ?? 0).jpeg")}
+    //let episode: [String]
+    let url: String
+    //let created: String
 }
-
-
 
 //import SwiftUI
 
@@ -73,7 +77,7 @@ struct Character {
 //     let type: String
 //     let gender: String
 //     let origin, location: Location
-   //  let image: String
+//  let image: String
      var imageUrl:  URL? {
          return URL(string: "https://rickandmortyapi.com/api/character/avatar/\(id ?? 0).jpeg")
          //return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id ?? 0).png")

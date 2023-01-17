@@ -27,41 +27,63 @@ struct RickMortyListView: View {
     //var character: Results
     //var character: [Results] = []
     
-//    private var filteredCharacters: [Character]{
-//        return charactersModelData.characters.filter { character in
-//            return !showFavorites || character.favorite
-//        }
-//    }
-    
-    var body: some View {
-        NavigationView {
-//            VStack{
-//                Toggle(isOn: TRUE){//isOn: $showFavorites) {
-//                    Text("Mostrar Favoritos")
-//                }.padding()
-//            }
-
-                //List (filteredCharacters, id: \.id) { character in
-            List (characters, id: \.name) { character in
-                NavigationLink (destination:ListDetailView(character: character)){ //Character.init(results: []))){
-                        RickMortyCharacterView(character: character)//, //favorite: $charactersModelData.characters //[character.id].favorite)) {
-                    }
-                }
-                .onAppear(){
-                    RickMortyApi().loadCharacter { result in
-                        
-                        switch result {
-                        case .success(let characters):
-                            self.characters = characters
-                        case .failure(let error):
-                            print(error)
-                        }
-                    }
-                    
-                }.navigationTitle("Characters List")
-            }
+ /*  private var filteredCharacters: [Results]{
+        return characters.filter { item in
+            return !showAlive || isAlive()
         }
     }
+    
+    func isAlive()->Bool{
+        if (characters.status == "Alive"){
+            return true
+        }else{
+           return false
+        }
+    }
+   
+     
+    
+    @State private var showAlive = false
+    */
+
+    var body: some View {
+        VStack{
+            
+            /*Toggle(isOn: $showAlive) {
+                Text("Mostrar Vivos")
+            }.padding()*/
+            NavigationView {
+                List (characters, id: \.name) { character in
+                    NavigationLink (destination:ListDetailView(character: character)){ //Character.init(results: []))){
+                        RickMortyCharacterView(character: character)//, //favorite: $charactersModelData.characters //[character.id].favorite)) {
+                        }
+                    }
+                    .onAppear(){
+                        RickMortyApi().loadCharacter { result in
+                            
+                            switch result {
+                            case .success(let characters):
+                                self.characters = characters
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+                        
+                    }.navigationTitle("Characters List")
+            }
+        }
+      //.searchable(text: $searchText, prompt: "Busca un personaje" )
+        
+    }
+   /* var searchResults: [Results] {
+            if searchText.isEmpty {
+                return characters
+            } else {
+                return List (characters, id: \.name, rowContent: Character)
+                 //characters.filter {character in characters.contains(searchText)}
+            }
+        }*/
+}
 
 struct RickMortyListView_Previews: PreviewProvider {
     static var previews: some View {
